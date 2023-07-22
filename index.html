@@ -15,43 +15,49 @@
 
 <body>
   <!-- Container -->
-<div class="simon">
+  <div class="simon">
+    <!-- Page title -->
+    <h1 class="simon__title">Simon Classic Game</h1>
 
-  <!-- Big circle -->
-  <div class="simon__circle simon__big-cirlce">
-    <div class="simon__green"></div>
-    <div class="simon__red"></div>
-    <div class="simon__blue"></div>
-    <div class="simon__yellow"></div>
-  </div>
-
-  <!-- Small circle with buttons inside the big circle-->
-  <div class="simon__circle simon__small-cirlce">
-    <!-- Title -->
-    <h1 class="simon_title">SIMON!</h1>
-    <!-- Button start -->
-    <button class="simon__start">Start</button>
-    <!-- Power and mode checkbox -->
-    <div class="simon__checkbox">
-      <div class="simon__power">
-        <label for="power">POWER</label>
-        <input type="checkbox" id="power" name="power">
+    <div class="simon__elements">
+      <!-- Big circle -->
+      <div class="simon__circle simon__big-cirlce">
+        <div class="simon__green"></div>
+        <div class="simon__red"></div>
+        <div class="simon__blue"></div>
+        <div class="simon__yellow"></div>
       </div>
-      <div class="simon__mode">
-        <label for="mode">STRICK</label>
-        <input type="checkbox" id="mode" name="mode">
-      </div>
-    </div>
-    <!-- Screen -->
-    <div class="simon__screen">
-      <div class="simon__score"><p>1</p></div>
-    </div>
-    <!-- Count paragraph -->
-    <p class="simon__count">COUNT</p>
 
+      <!-- Small circle with buttons inside the big circle-->
+      <div class="simon__circle simon__small-cirlce">
+        <!-- Title -->
+        <h2 class="simon__circle-title">SIMON!</h2>
+        <!-- Button start -->
+        <button class="simon__start">Start</button>
+        <!-- Power and mode checkbox -->
+        <div class="simon__checkbox">
+          <div class="simon__power">
+            <label for="power">POWER</label>
+            <input type="checkbox" id="power" name="power">
+          </div>
+          <div class="simon__mode">
+            <label for="mode">STRICK</label>
+            <input type="checkbox" id="mode" name="mode">
+          </div>
+        </div>
+        <!-- Screen -->
+        <div class="simon__screen">
+          <div class="simon__score">
+            <p>1</p>
+          </div>
+        </div>
+        <!-- Count paragraph -->
+        <p class="simon__count">COUNT</p>
+
+      </div>
+
+    </div>
   </div>
-  
-</div>
   <script src="./js/index.js"></script>
 </body>
 
