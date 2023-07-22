@@ -5,11 +5,163 @@ $border-color: #030000;
 $green-color: #015903;
 $red-color: #7e0001;
 $blue-color: #00007a;
-$yellow-color: #d49c25;
-$central-bg-color: #767676;
+$yellow-color: #ffae00;
+$central-bg-color: #a5a4a4;
 $title-bg-color: #dddddd;
 $button-text-color: #222222;
-$screen-color:#2c0001;
-$score-color:#881518;
-$checkbox-bg-color:#3b90e3;
-$checked-color:#80ccff;
+$screen-color: #2c0001;
+$score-color: #ff0008f6;
+
+body {
+  background-color: $page-bg-color;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.simon {
+  &__title {
+    text-align: center;
+    padding: 30px 0;
+    @media screen and (max-width: 500px) {
+      font-size: 1.5rem;
+    }
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &__elements {
+    position: relative;
+    margin: 0 auto;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background-color: $border-color;
+
+    @media screen and (max-width: 500px) {
+      width: 300px;
+      height: 300px;
+    }
+  }
+  &__circle {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    // translate: (-50%,-50%);
+  }
+  &__big-circle {
+    border-radius: 50%;
+    outline: 5px solid;
+    grid-template-columns: 1fr 1fr;
+    // background-color: aqua;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+  }
+
+  &__green {
+    background-color: $green-color;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 100%;
+    &:active {
+      background-color: lighten($green-color, 30);
+    }
+  }
+  &__red {
+    background-color: $red-color;
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 100%;
+    &:active {
+      background-color: lighten($red-color, 30);
+    }
+  }
+  &__blue {
+    background-color: $blue-color;
+    width: 100%;
+    height: 100%;
+    border-bottom-right-radius: 100%;
+    order: 3;
+    &:active {
+      background-color: lighten($blue-color, 30);
+    }
+  }
+  &__yellow {
+    background-color: $yellow-color;
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 100%;
+    &:active {
+      background-color: lighten($yellow-color, 30);
+    }
+  }
+
+  &__small-circle {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44%;
+    height: 44%;
+    border-radius: 50%;
+    background-color: $central-bg-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    outline: 5px solid;
+    @media screen and (max-width: 500px) {
+      width: 50%;
+      height: 50%;
+    }
+  }
+  &__circle-title {
+    font-size: 1.2rem;
+  }
+  &__start {
+    border: none;
+    border-radius: 45%;
+    // font-size: 0.8rem;
+    font-weight: 400;
+    &:active {
+      background-color: #848282;
+    }
+  }
+  &__checkbox {
+    // font-size: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: -10px;
+    gap: 50px;
+    @media screen and (max-width: 500px) {
+      font-size: 0.6rem;
+    }
+  }
+  &__power,
+  &__mode {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  &__screen {
+    background-color: $screen-color;
+    width: 80px;
+    height: 30px;
+    margin-top: 5px;
+    display: grid;
+    place-items: center;
+  }
+
+  &__score{
+    color: $score-color;
+    font-size: 1.2rem;
+    font-weight: 800;
+  }
+
+  &__count {
+    @media screen and (max-width: 500px) {
+      font-size: 0.8rem;
+    }
+  }
+}
